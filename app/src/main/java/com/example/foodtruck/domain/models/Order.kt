@@ -1,18 +1,20 @@
+package com.example.foodtruck.domain.models
+
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@Entity(tableName = "ordenes")
-
+@Entity(tableName = "orders")
 data class Order(
     @PrimaryKey
     val id: String,
-    val nombre_comensal: String,
-    val cel_comensal: String,
-    val item : String,
-    val montototal: Double
-
-
-) Parcelable
+    val customerName: String,
+    val customerPhone: String,
+    val items: String, // JSON string de los items
+    val totalAmount: Double,
+    val status: OrderStatus,
+    val orderTime: Long,
+    val pickupTime: Long? = null
+) : Parcelable

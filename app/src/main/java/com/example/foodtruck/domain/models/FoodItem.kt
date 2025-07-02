@@ -1,19 +1,16 @@
+package com.example.foodtruck.domain.models
+
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
-
 @Parcelize
-@Entity(tableName = "food_items")
-
-data class FoodItem(
-    @PrimaryKey
-    val id: String,
-    val nombre: String,
-    val descripcion : String,
-    val precio: Double,
-    val categoria: String,
-    val imagenUrl: "",
-
+@Entity(tableName = "cart_items")
+data class CartItem(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val foodItemId: String,
+    val quantity: Int,
+    val specialInstructions: String = ""
 ) : Parcelable
