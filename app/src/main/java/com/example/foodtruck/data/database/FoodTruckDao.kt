@@ -11,4 +11,8 @@ Interface FoodTruckDao {
     @Insert(onConFlict = onConFlictStrategy.REPLACE)
     suspend fun insertFoodItems(item: List<FoodItem>)
 
+    @Query("SELECT * FROM food_item WHERE isAvailable = 1 OREDER BY category, name")
+    fun getAllAvailableItems(): Flow<List>FoodItem>>
+
+    
 }
