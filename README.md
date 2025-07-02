@@ -8,7 +8,8 @@ Objetivos
   diseño 
   app movil
 
-  
+### Estructura base ###
+
 app/src/main/java/com/foodtruck/
 ├── MainActivity.kt
 ├── data/
