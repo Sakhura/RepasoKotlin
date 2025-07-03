@@ -1,8 +1,11 @@
 package com.example.foodtruck.data.database
 
 import androidx.room.*
+import com.example.foodtruck.domain.models.CartItem
+import com.example.foodtruck.domain.models.FoodItem
+import com.example.foodtruck.domain.models.OrderStatus
+import com.example.foodtruck.domain.models.Order
 import kotlinx.coroutines.flow.Flow
-import com.example.foodtruck.domain.models.*
 
 @Dao
 interface FoodTruckDao {

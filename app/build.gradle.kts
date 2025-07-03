@@ -1,16 +1,16 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp") version "1.9.22-1.0.17"
     id("kotlin-parcelize")
 }
 
 android {
-    namespace = "com.foodtruck.app"
+    namespace = "com.example.foodtruck"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.foodtruck.app"
+        applicationId = "com.example.foodtruck"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -66,9 +66,10 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.6")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
 
-    implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
+    // Room Database con KSP
+    implementation("androidx.room:room-runtime:2.5.0")
+    implementation("androidx.room:room-ktx:2.5.0")
+    ksp("androidx.room:room-compiler:2.5.0")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
